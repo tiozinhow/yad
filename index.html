@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="blocker.js"></script>
+</head>
+<script>
+    function audioPlay() {
+        var audio = document.getElementById("audio");
+        audio.volume = 0.3;
+        audio.currentTime = 23;
+        audio.play();
+    }
+</script>
+<audio loop preload="auto" id="audio">
+    <source src="https://cdn.discordapp.com/attachments/1094622042348855357/1172820667377397820/SnapTik.biz_-_SNIF_-_Dopa_Mina_128_kbps.mp3?ex=6561b55d&is=654f405d&hm=fe8c14093702cf7d59f8581844a7352e6c5f9296d3daca58aae34a2bcd64dfea&"
+        type="audio/mpeg">
+</audio>
+<input type="checkbox" autocomplete="off" id="overlay-toggle">
+<div class="overlay fullscreen">
+    <label for="overlay-toggle" onclick="audioPlay(); ">
+        <center>
+            <span class="overlayno-hover hover" style="font-family: monospace; font-size: 0.6em;">2 reais ou um tapa na cara</span>
+            <span class="overlayhover hover" style="font-family: monospace; font-size: 0.6em;">2 reais ou um tapa na cara</span>
+    </label>
+</div>
+<body>
+    <video autoplay="" loop="" muted="">
+        <source src="" type="video/mp4">
+        Seu navegador não suporta vídeo.
+    </video>
+    <div class="all">
+        <div class="discord-profile">
+            <div class="profile-cover"></div>
+            <div class="profile animate__animated animate__fadeInUp animate__fast">
+                <div class="pfp">
+                    <img id="avatar" alt="404">
+                </div>
+                <div class="nickr" id="globalName"></div>
+                <div class="nick subnick" id="username"></div>
+                <div class="badges" id="badges"></div>
+                <div><br>
+                    <div id="bio"></div>
+                    <div class="social-buttons" id="socialIcons"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            const apiUrl = 'http://4.228.226.40:3000/discord/user/939962710391672832'; //ID dps do user/ - Exemplo: http://4.228.226.40:3000/discord/user/1096822408712830998
+
+            try {
+                const response = await fetch(apiUrl);
+                const userData = await response.json();
+
+                const bioElement = document.getElementById('bio');
+                bioElement.innerHTML = userData.bio;
+                document.getElementById('avatar').src = `https://cdn.discordapp.com/avatars/${userData.id}/${userData.avatar}.png?size=2048`;
+                document.getElementById('globalName').innerText = userData.global_name;
+                document.getElementById('username').innerText = userData.username;
+
+                const emojiToBadgeImage = {
+                    '<:bluestaff:1209242149955182602>': 'badges/discordstaff.svg',
+                    '<:partner:1209242240442957894>': 'badges/discordpartner.svg',
+                    '<:HypeSquad_Event:1199429425398296577>': 'badges/hypesquadevents.svg',
+                    '<:Bug_Hunter:1209242436920942724>': 'badges/discordbughunter1.svg',
+                    '<:HypeSquad_Bravery:1199429595364069487>': 'badges/hypesquadbravery.svg',
+                    '<:HypeSquad_Brilliance:1199429640691925085>': 'badges/hypesquadbrilliance.svg',
+                    '<:HypeSquad_Balance:1199429555941806232>': 'badges/hypesquadbalance.svg',
+                    '<:pig_midia:1195048779045421217>': 'badges/discordearlysupporter.svg',
+                    '<:nitro:1193689230870839447>': 'badges/nitro.gif',
+                    '<:Bug_Hunter_level2:1209242461805871134>': 'badges/discordbughunter2.svg',
+                    '<:devrico:1199429680701382687>': 'badges/discordbotdev.svg',
+                    '<:devpobre:1195048711533908082>': 'badges/activedeveloper.svg',
+                    '<:lvl1:1192181337906487379>': 'badges/discordboost1.svg',
+                    '<:lvl2:1192181353056305288>': 'badges/discordboost2.svg',
+                    '<:lvl3:1192181362980040795>': 'badges/discordboost3.svg',
+                    '<:lvl4:1192181374166237264>': 'badges/discordboost4.svg',
+                    '<:lvl5:1192181384530378762>': 'badges/discordboost5.svg',
+                    '<:lvl6:1192181396278624386>': 'badges/discordboost6.svg',
+                    '<:lvl7:1192181406445600910>': 'badges/discordboost7.svg',
+                    '<:lvl8:1192181416402886656>': 'badges/discordboost8.svg',
+                    '<:lvl9:1192181428025298965>': 'badges/discordboost9.svg',
+                };
+
+                const socialIconsData = [
+                    { name: 'Instagram', emoji: 'fab fa-instagram social-icon', link: 'instagram' },
+                    { name: 'Steam', emoji: 'fab fa-steam social-icon', link: 'steam' },
+                    { name: 'Twitter', emoji: 'fab fa-twitter social-icon', link: 'twitter' },
+                    { name: 'Spotify', emoji: 'fab fa-spotify social-icon', link: 'spotify' },
+                    { name: 'YouTube', emoji: 'fab fa-youtube social-icon', link: 'youtube' },
+                    { name: 'Paypal', emoji: 'fab fa-paypal social-icon', link: 'paypal' },
+                ];
+
+
+                const socialIcons = document.getElementById('socialIcons');
+
+                socialIconsData.forEach(iconData => {
+                    if (userData[iconData.link]) {
+                        const iconLink = document.createElement('a');
+                        iconLink.href = userData[iconData.link];
+                        iconLink.target = '_blank';
+
+                        const icon = document.createElement('i');
+                        icon.className = iconData.emoji;
+
+                        iconLink.appendChild(icon);
+                        socialIcons.appendChild(iconLink);
+
+                        icon.style.marginRight = '10px';
+                    }
+                });
+
+                const badgesElement = document.getElementById('badges');
+
+                userData.badges.forEach(badge => {
+                    const badgeImageURL = emojiToBadgeImage[badge];
+
+                    if (badgeImageURL) {
+                        const badgeDiv = document.createElement('div');
+                        badgeDiv.className = 'badge';
+                        badgeDiv.style.backgroundImage = `url('${badgeImageURL}')`;
+
+                        badgesElement.appendChild(badgeDiv);
+                    }
+                });
+
+            } catch (error) {
+                console.error("Erro ao obter dados da API:", error);
+            }
+        });
+    </script>
+</body>
+</html>
