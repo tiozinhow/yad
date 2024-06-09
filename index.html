@@ -6,18 +6,20 @@
     <title>Obrigado por comprar nosso curso de Maquiagem!</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background: linear-gradient(135deg, #ff69b4, #ffcccb);
+            color: #333;
         }
         .container {
             width: 80%;
+            max-width: 800px;
             margin: 50px auto;
-            background-color: #f5f5f5; /* Cor de fundo */
+            background-color: #ffffff;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             opacity: 0;
             animation: fadeIn 1s ease forwards;
         }
@@ -27,51 +29,77 @@
             }
         }
         h1 {
-            color: #333;
+            color: #ff69b4;
             text-align: center;
+            font-size: 2.5em;
         }
         p {
             color: #666;
             text-align: center;
-            margin-top: 30px; /* Aumentando o espaçamento superior */
-            line-height: 1.5; /* Espaçamento entre linhas */
-            font-size: 20px; /* Aumentando o tamanho da fonte */
-            font-weight: bold; /* Deixando o texto em negrito */
+            margin-top: 20px;
+            line-height: 1.5;
+            font-size: 1.2em;
+            font-weight: bold;
         }
         .button {
             display: block;
             width: 200px;
             margin: 20px auto;
-            padding: 10px 20px;
+            padding: 15px 20px;
             background-color: #ff69b4;
             color: #fff;
             text-align: center;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            border-radius: 30px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
         .button:hover {
             background-color: #d3548e;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .offer {
+            background-color: #ffcccb;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .offer h2 {
+            color: #d3548e;
+            font-size: 1.8em;
+        }
+        .offer p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .contact-info a {
+            color: #ff69b4;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Obrigado por comprar nosso curso de Maquiagem!</h1>
-        <p>Estamos animados para tê-lo(a) conosco.<br>Verifique seu e-mail para acessar o curso.</p>
+        <p>Estamos animados para tê-lo(a) conosco. Verifique seu e-mail para acessar o curso.</p>
         
+        <div class="offer">
+            <h2>Oferta Exclusiva para Você!</h2>
+            <p>Como um agradecimento especial, estamos oferecendo o nosso curso completo de Maquiagem Lucrativa por um preço promocional. Aproveite esta oportunidade única para dominar todas as técnicas de maquiagem e transformar sua paixão em uma carreira lucrativa.</p>
+            <a href="LINK_DO_CURSO_COMPLETO" class="button">Sim, quero aproveitar!</a>
+            <a href="LINK_PARA_OFERTA_DE_DESCONTO" class="button">Não, obrigado</a>
+        </div>
 
-
-<div class="contact-info">
-  <p>Se precisar de ajuda, <a href="https://api.whatsapp.com/send/?phone=%2B5575982397990&text&type=phone_number&app_absent=0" class="button">Contate o Suporte</a>
-   <div>  <center> ou entre em contato pelo e-mail: <a href="mailto:
-suportecursoall@gmail.com" </center>
-      <center>suportecursoall@gmail.com</center>
-      
+        <div class="contact-info">
+            <p>Se precisar de ajuda, <a href="https://api.whatsapp.com/send/?phone=%2B5575982397990&text&type=phone_number&app_absent=0" class="button">Contate o Suporte</a></p>
+            <p>ou entre em contato pelo e-mail: <a href="mailto:suportecursoall@gmail.com">suportecursoall@gmail.com</a></p>
+        </div>
     </div>
 </body>
 </html>
-
-
-  
-  
