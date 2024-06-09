@@ -1,74 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aproveite esta Oferta Exclusiva!</title>
+    <title>Obrigado por comprar nosso curso de Maquiagem!</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9; /* Fundo claro */
-            color: #333; /* Texto escuro */
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background: linear-gradient(135deg, #ff69b4, #ffcccb);
+            color: #333;
         }
-
         .container {
-            max-width: 600px;
+            width: 80%;
+            max-width: 800px;
             margin: 50px auto;
-            text-align: center;
             background-color: #ffffff;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
         }
-
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
         h1 {
-            color: #333;
-            margin-bottom: 20px;
+            color: #ff69b4;
+            text-align: center;
+            font-size: 2.5em;
         }
-
         p {
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .downsell-img {
-            width: 126px;
+            color: #666;
+            text-align: center;
             margin-top: 20px;
+            line-height: 1.5;
+            font-size: 1.2em;
+            font-weight: bold;
         }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .downsell-button {
-            display: inline-block;
-            background-color: #007bff;
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 5px;
+        .button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 15px 20px;
+            background-color: #ff69b4;
+            color: #fff;
+            text-align: center;
             text-decoration: none;
-            transition: background-color 0.3s;
-            margin-top: 20px;
-            margin-right: 10px;
+            border-radius: 30px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .downsell-button:hover {
-            background-color: #0056b3;
+        .button:hover {
+            background-color: #d3548e;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .offer {
+            background-color: #ffcccb;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .offer h2 {
+            color: #d3548e;
+            font-size: 1.8em;
+        }
+        .offer p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .contact-info a {
+            color: #ff69b4;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Oferta Especial!</h1>
-        <p>Procurando por técnicas de maquiagem específicas para homens? Temos a solução perfeita para você:</p>
-        <img src="https://media.discordapp.net/attachments/1195534910962798593/1248836954372440085/img_builder_4bd30ace-de10-497c-bad7-7d31af5a4b31_dbf9c4b6544945d0a700292decbf1ae0.png?ex=66651d8c&is=6663cc0c&hm=ba17baf106f09c7ca4ee41d10fb6310fe36d25988e337a88d4eea1cb9d84385a&=&format=webp&quality=lossless" alt="Downsell" class="downsell-img">
-        <p>Desbloqueie acesso imediato ao módulo de Maquiagem para Homens por apenas R$57,90</p>
-        <div class="button-container">
-            <a href="https://pay.kiwify.com.br/1Gp3QEf" class="downsell-button">Quero Esta Oferta!</a>
-            <a href=index.html class="downsell-button">Não Quero Esta Oferta</a>
+        <h1>Obrigado por comprar nosso curso de Maquiagem!</h1>
+        <p>Estamos animados para tê-lo(a) conosco. Verifique seu e-mail para acessar o curso.</p>
+        
+        <div class="offer">
+            <h2>Oferta Exclusiva para Você!</h2>
+            <p>Como um agradecimento especial, estamos oferecendo o nosso curso completo de Maquiagem Lucrativa por um preço promocional. Aproveite esta oportunidade única para dominar todas as técnicas de maquiagem e transformar sua paixão em uma carreira lucrativa.</p>
+            <a href="LINK_DO_CURSO_COMPLETO" class="button">Sim, quero aproveitar!</a>
+            <a href="LINK_PARA_OFERTA_DE_DESCONTO" class="button">Não, obrigado</a>
+        </div>
+
+        <div class="contact-info">
+            <p>Se precisar de ajuda, <a href="https://api.whatsapp.com/send/?phone=%2B5575982397990&text&type=phone_number&app_absent=0" class="button">Contate o Suporte</a></p>
+            <p>ou entre em contato pelo e-mail: <a href="mailto:suportecursoall@gmail.com">suportecursoall@gmail.com</a></p>
         </div>
     </div>
 </body>
